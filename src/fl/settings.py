@@ -79,6 +79,7 @@ WSGI_APPLICATION = 'fl.wsgi.application'
 
 import os
 import pymysql
+
 pymysql.version_info = (1, 4, 6, 'final, 0')
 pymysql.install_as_MySQLdb()
 
@@ -87,10 +88,10 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
-            "NAME": "fairlist",
+            "HOST": "/cloudsql/free-fairlist:us-central1:demo-fairlist",
             "USER": "root",
             "PASSWORD": "dL\Sq<k[j(?0Y~cj",
-            "HOST": "/cloudsql/free-fairlist:us-central1:demo-fairlist",
+            "NAME": "fairlist",
         }
     }
 else:
@@ -99,7 +100,7 @@ else:
             "ENGINE": "django.db.backends.mysql",
             "NAME": "fairlist",
             "USER": "root",
-            "PASSWORD": "dL\Sq<k[j(?0Y~cj",
+            "PASSWORD": "*teoria21",
             "HOST": "127.0.0.1",
             "PORT": "3306",
         }
